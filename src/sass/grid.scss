@@ -1,0 +1,148 @@
+@import 'sass-list-maps';
+
+$gutter: 20px;
+
+$grid-targets: (
+  lap 500px,
+  desk 1000px
+);
+
+$grid-proportions: (
+  #{1/2} 50%,
+  #{1/3} percentage(1/3),
+  #{2/3} percentage(2/3),
+  #{1/4} 25%,
+  #{3/4} 75%
+);
+
+// flex container
+[grid] {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: ($gutter / 2) * -1;
+  margin-right: ($gutter / 2) * -1;
+}
+
+// flex items
+[grid-item] {
+  flex: 1 0 calc(100% - #{$gutter});
+  margin-left: $gutter / 2;
+  margin-right: $gutter / 2;
+}
+
+[grid-item~='last'] {
+  order: 1;
+}
+
+[grid-item~='first'] {
+  order: -1;
+}
+
+[grid-item~='auto'] {
+  flex-basis: 0;
+}
+
+// mobile first grid item sizes
+@each $size in map-keys($grid-proportions) {
+  [grid-item~='#{$size}'] {
+    $width: get($grid-proportions, $size);
+    flex-basis: calc(#{$width} - #{$gutter});
+    max-width: calc(#{$width} - #{$gutter}); // for IE10 & IE11
+  }
+}
+
+// breakpoint specific grid item sizes
+@each $target in map-keys($grid-targets) {
+  @media (min-width: get($grid-targets, $target)) {
+    [grid-item~='full:#{$target}'] {
+      flex-basis: calc(100% - #{$gutter});
+      max-width: calc(100% - #{$gutter}); // for IE10 & IE11
+    }
+
+    [grid-item~='auto:#{$target}'] {
+      flex-basis: 0;
+    }
+
+    @each $size in map-keys($grid-proportions) {
+      [grid-item~='#{$size}:#{$target}'] {
+        $width: get($grid-proportions, $size);
+        flex-basis: calc(#{$width} - #{$gutter});
+        max-width: calc(#{$width} - #{$gutter}); // for IE10 & IE11
+      }
+    }
+  }
+}
+
+// mobile first grid item alignment and distribution
+[grid~='justify-start'] {
+  justify-content: flex-start;
+}
+
+[grid~='justify-center'] {
+  justify-content: center;
+}
+
+[grid~='justify-end'] {
+  justify-content: flex-end;
+}
+
+[grid~='align-top'] {
+  align-items: flex-start;
+}
+
+[grid~='align-middle'] {
+  align-items: center;
+}
+
+[grid~='align-bottom'] {
+  align-items: flex-end;
+}
+
+[grid~='distribute-space-around'] {
+  justify-content: space-around;
+}
+
+[grid~='distribute-space-between'] {
+  justify-content: space-between;
+}
+
+[grid~='reverse'] {
+  flex-direction: row-reverse;
+}
+
+// breakpoint specific grid item alignment and distribution
+@each $target in map-keys($grid-targets) {
+  @media (min-width: get($grid-targets, $target)) {
+    [grid~='justify-start:#{$target}'] {
+      justify-content: flex-start;
+    }
+
+    [grid~='justify-center:#{$target}'] {
+      justify-content: center;
+    }
+
+    [grid~='justify-end:#{$target}'] {
+      justify-content: flex-end;
+    }
+
+    [grid~='align-top:#{$target}'] {
+      align-items: flex-start;
+    }
+
+    [grid~='align-middle:#{$target}'] {
+      align-items: center;
+    }
+
+    [grid~='align-bottom:#{$target}'] {
+      align-items: flex-end;
+    }
+
+    [grid~='distribute-space-around:#{$target}'] {
+      justify-content: space-around;
+    }
+
+    [grid~='distribute-space-between:#{$target}'] {
+      justify-content: space-between;
+    }
+  }
+}

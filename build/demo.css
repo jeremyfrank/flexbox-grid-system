@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  padding: 15px; }
+
+dt {
+  font-weight: bold; }
+
+code {
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 0 0.4em; }
+
+.demo[grid-item] {
+  background: #9cf;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  min-height: 3em;
+  text-align: center; }
+
+.no-flexbox.no-flexboxtweener.no-flexboxlegacy .demo[grid-item] {
+  outline: thin dotted; }

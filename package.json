@@ -1,0 +1,19 @@
+{
+  "name": "flex",
+  "version": "0.0.0",
+  "description": "",
+  "devDependencies": {
+    "browser-sync": "^1.5.8",
+    "gulp": "^3.8.9",
+    "gulp-autoprefixer": "^1.0.1",
+    "gulp-changed": "^1.0.0",
+    "gulp-notify": "^2.0.0",
+    "gulp-sass": "^1.2.0",
+    "gulp-util": "^3.0.1",
+    "pretty-hrtime": "^0.2.2",
+    "require-dir": "^0.1.0",
+    "sass-list-maps": "^1.0.0-b",
+    "vinyl-source-stream": "^1.0.0",
+    "watchify": "^2.1.0"
+  }
+}
