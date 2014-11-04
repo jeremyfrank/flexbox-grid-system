@@ -1,0 +1,45 @@
+body {
+  color: #444;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0; }
+
+header {
+  padding: 20px 15px 0; }
+  @media (min-width: 500px) {
+    header {
+      padding: 40px 40px 0; } }
+
+h1 {
+  border-bottom: 1px solid #ccc;
+  line-height: 1;
+  margin: 0;
+  padding-bottom: 0.3em; }
+
+main {
+  padding: 0 15px; }
+  @media (min-width: 500px) {
+    main {
+      padding: 40px; } }
+
+section > * + * {
+  margin-top: 22px; }
+section + section {
+  margin-top: 50px; }
+
+code {
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-family: 'Source Code Pro', 'Liberation Mono', Consolas, monospace;
+  font-size: 14px;
+  padding: 0.2em 0.4em; }
+
+.demo[grid-item] {
+  background: #C4D7ED;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  min-height: 3em;
+  text-align: center; }
+  .demo[grid-item] p {
+    margin: 1em; }

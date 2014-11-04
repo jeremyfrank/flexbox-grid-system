@@ -1,0 +1,78 @@
+$pad-sm: 15px;
+$pad-lg: 40px;
+
+$color:   #C4D7ED;
+
+@mixin bp-lap {
+  @media (min-width: 500px) {
+    @content;
+  }
+}
+
+body {
+  color: #444;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+// header
+header {
+  padding: 20px $pad-sm 0;
+
+  @include bp-lap {
+    padding: $pad-lg $pad-lg 0;
+  }
+}
+
+// type
+h1 {
+  border-bottom: 1px solid #ccc;
+  line-height: 1;
+  margin: 0;
+  padding-bottom: .3em;
+}
+
+// main
+main {
+  padding: 0 $pad-sm;
+
+  @include bp-lap {
+    padding: $pad-lg;
+  }
+
+}
+
+// sections
+section {
+  > * + * {
+    margin-top: 22px;
+  }
+
+  & + & {
+    margin-top: 50px;
+  }
+}
+
+// code samples
+code {
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-family: 'Source Code Pro', 'Liberation Mono', Consolas, monospace;
+  font-size: 14px;
+  padding: .2em .4em;
+}
+
+// grid items
+.demo[grid-item] {
+  background: $color;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  min-height: 3em;
+  text-align: center;
+
+  p {
+    margin: 1em;
+  }
+}
