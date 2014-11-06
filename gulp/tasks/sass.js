@@ -4,7 +4,7 @@ var sass         = require('gulp-sass');
 var handleErrors = require('../util/handleErrors');
 
 gulp.task('sass', function() {
-	return gulp.src('./src/sass/*.scss')
+  return gulp.src('./src/sass/*.scss')
     .on('error', handleErrors)
     .pipe(sass({ includePaths: ['./node_modules/sass-list-maps'] }))
     .pipe(prefix())

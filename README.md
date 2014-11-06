@@ -55,7 +55,7 @@ Additional formatting can be applied at the `grid` level.
 
 ### Setup
 
-First install all project dependancies.
+First install all project dependencies.
 
 ```
 npm install
