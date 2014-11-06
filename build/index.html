@@ -243,27 +243,5 @@
         <p>4</p>
       </div>
     </div>
-
-    <h3>Findings</h3>
-    <dl>
-      <dt>IE11 Caution</dt>
-      <dd>If using <code>box-sixing: border-box</code> and <code>padding</code> on flex items, IE11 calculates flex item widths incorrectly (too wide). There are three possible fixes:</dd>
-      <dd>
-        <ol>
-          <li>Add a <code>max-width</code> property on flex items.</li>
-          <li>Use <code>box-sizing: content-box</code> on flex items and <code>calc()</code> to set the <code>flex-basis</code>.</li>
-          <li>Use <code>margin</code> for gutters instead of padding, and <code>calc()</code> to set the <code>flex-basis</code> (<code>box-sizing</code> value is irrelevant in this case).</li>
-        </ol>
-      </dd>
-
-      <dt>IE10 Caution</dt>
-      <dd>The CSS <code>calc()</code> function currently does not work on flexbox values. The following work-around is necessary for IE10:</dd>
-      <dd>
-        <ul>
-          <li>Set the tweener property <code>flex-preferred-size</code> to <code>auto</code>.</li>
-          <li>Add a <code>width</code> property with the <code>calc()</code> value and use Modernizr or UA data-attributes to apply this property only to IE10.</li>
-        </ul>
-      </dd>
-    </dl>
   </body>
 </html>

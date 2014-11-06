@@ -25,9 +25,10 @@ $grid-proportions: (
 
 // flex items
 [grid-item] {
-  flex: 1 0 calc(100% - #{$gutter});
+  flex: 1 0 auto;
   margin-left: $gutter / 2;
   margin-right: $gutter / 2;
+  width: calc(100% - #{$gutter});
 }
 
 [grid-item~='last'] {
@@ -39,15 +40,14 @@ $grid-proportions: (
 }
 
 [grid-item~='auto'] {
-  flex-basis: 0;
+  flex: 1;
 }
 
 // mobile first grid item sizes
 @each $size in map-keys($grid-proportions) {
   [grid-item~='#{$size}'] {
     $width: get($grid-proportions, $size);
-    flex-basis: calc(#{$width} - #{$gutter});
-    max-width: calc(#{$width} - #{$gutter}); // for IE10 & IE11
+    width: calc(#{$width} - #{$gutter});
   }
 }
 
@@ -55,19 +55,17 @@ $grid-proportions: (
 @each $target in map-keys($grid-targets) {
   @media (min-width: get($grid-targets, $target)) {
     [grid-item~='full:#{$target}'] {
-      flex-basis: calc(100% - #{$gutter});
-      max-width: calc(100% - #{$gutter}); // for IE10 & IE11
+      width: calc(100% - #{$gutter});
     }
 
     [grid-item~='auto:#{$target}'] {
-      flex-basis: 0;
+      flex: 1;
     }
 
     @each $size in map-keys($grid-proportions) {
       [grid-item~='#{$size}:#{$target}'] {
         $width: get($grid-proportions, $size);
-        flex-basis: calc(#{$width} - #{$gutter});
-        max-width: calc(#{$width} - #{$gutter}); // for IE10 & IE11
+        width: calc(#{$width} - #{$gutter});
       }
     }
   }
@@ -84,6 +82,13 @@ $grid-proportions: (
 
 [grid~='justify-end'] {
   justify-content: flex-end;
+}
+
+[grid*='justify-'],
+[grid*='distribute-'] {
+  [grid-item] {
+    flex: 0 auto;
+  }
 }
 
 [grid~='align-top'] {
