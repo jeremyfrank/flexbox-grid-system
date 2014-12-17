@@ -1,0 +1,47 @@
+/* ------ START OF THEME ------ */
+/*
+ * Snappy Light
+ * Prettify CSS Theme.
+ *
+ * Copyright (c) 2014 Dayle Rees
+ */
+.theme-snappy-light {
+  color: #555555; }
+
+.theme-snappy-light .pln {
+  color: #555555; }
+
+.theme-snappy-light .str {
+  color: #4ea1df; }
+
+.theme-snappy-light .kwd {
+  color: #4ea1df; }
+
+.theme-snappy-light .com {
+  color: #bbbbbb; }
+
+.theme-snappy-light .typ {
+  color: #f66153; }
+
+.theme-snappy-light .lit {
+  color: #808dd3; }
+
+.theme-snappy-light .pun, .theme-snappy-light .opn, .theme-snappy-light .clo {
+  color: #555555; }
+
+.theme-snappy-light .tag {
+  color: #4ea1df; }
+
+.theme-snappy-light .atn {
+  color: #f66153; }
+
+.theme-snappy-light .atv {
+  color: #808dd3; }
+
+.theme-snappy-light .dec, .theme-snappy-light .var {
+  color: #4ea1df; }
+
+.theme-snappy-light .fun {
+  color: #4ea1df; }
+
+/* ------- END OF THEME ------- */

@@ -1,0 +1,119 @@
+$pad-sm: 15px;
+$pad-lg: 40px;
+
+$color-header: #6A767F;
+$color-grid:   #C4D7ED;
+
+@mixin bp-lap {
+  @media (min-width: 500px) {
+    @content;
+  }
+}
+
+body {
+  color: #444;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+// header
+header {
+  background: $color-header;
+  color: #fff;
+  padding: 20px $pad-sm;
+
+  @include bp-lap {
+    padding: $pad-lg;
+  }
+}
+
+// type
+h1 {
+  line-height: 1;
+  margin: 0;
+
+  @include bp-lap {
+    font-size: 60px;
+  }
+}
+
+h1, h2, h3 {
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
+  font-weight: 400;
+}
+
+// main
+main {
+  padding: 0 $pad-sm;
+
+  @include bp-lap {
+    padding: $pad-lg;
+  }
+
+}
+
+// sections
+section {
+  > * + * {
+    margin-top: 22px;
+  }
+
+  & + & {
+    margin-top: 50px;
+  }
+}
+
+// code samples
+pre, code {
+  background: #f8f8f8;
+  font-family: 'Source Code Pro', 'Liberation Mono', Consolas, monospace;
+  font-size: 14px;
+}
+
+pre {
+  border-left: 5px solid rgba($color-header, .2);
+  padding: 1em;
+}
+
+code {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: .2em .4em;
+}
+
+// grid items
+.demo[grid-item] {
+  background: $color-grid;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  min-height: 3em;
+  text-align: center;
+
+  p {
+    margin: 1em;
+  }
+}
+
+// buttons
+.button {
+  background: darken($color-header, 10%);
+  border-radius: 3px;
+  color: lighten($color-header, 50%);
+  display: inline-block;
+  font-size: 12px;
+  padding: .6em 1em .4em;
+  text-decoration: none;
+
+  .icon {
+    margin: -3px .5em 0 0;
+  }
+}
+
+.icon {
+  fill: currentColor;
+  height: 20px;
+  vertical-align: middle;
+  width: 20px;
+}

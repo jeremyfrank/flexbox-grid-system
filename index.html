@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Flexbox Grid System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/prettify-theme.css">
+
+    <script type="text/javascript">
+      WebFontConfig = {
+        google: { families: [ 'Oswald::latin', 'Open+Sans:300:latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1.5.6/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    </script>
+  </head>
+  <body>
+
+    <svg style="display: none">
+      <symbol id="github" viewBox="0 0 920 1000">
+        <path d="M620 564c17.333 0 32.333 8.667 45 26c12.667 17.333 19 38.667 19 64c0 25.333 -6.333 46.667 -19 64c-12.667 17.333 -27.667 26 -45 26c-18.667 0 -34.333 -8.667 -47 -26c-12.667 -17.333 -19 -38.667 -19 -64c0 -25.333 6.333 -46.667 19 -64c12.667 -17.333 28.333 -26 47 -26c0 0 0 0 0 0m226 -234c49.333 53.333 74 118 74 194c0 49.333 -5.667 93.667 -17 133c-11.333 39.333 -25.667 71.333 -43 96c-17.333 24.667 -38.667 46.333 -64 65c-25.333 18.667 -48.667 32.333 -70 41c-21.333 8.667 -45.667 15.333 -73 20c-27.333 4.667 -48 7.333 -62 8c-14 0.667 -29 1 -45 1c-4 0 -16 0.333 -36 1c-20 0.667 -36.667 1 -50 1c-13.333 0 -30 -0.333 -50 -1c-20 -0.667 -32 -1 -36 -1c-16 0 -31 -0.333 -45 -1c-14 -0.667 -34.667 -3.333 -62 -8c-27.333 -4.667 -51.667 -11.333 -73 -20c-21.333 -8.667 -44.667 -22.333 -70 -41c-25.333 -18.667 -46.667 -40.333 -64 -65c-17.333 -24.667 -31.667 -56.667 -43 -96c-11.333 -39.333 -17 -83.667 -17 -133c0 -76 24.667 -140.667 74 -194c-5.333 -2.667 -5.667 -29.333 -1 -80c4.667 -50.667 15.667 -97.333 33 -140c61.333 6.667 137.333 41.333 228 104c30.667 -8 72.667 -12 126 -12c56 0 98 4 126 12c41.333 -28 81 -50.667 119 -68c38 -17.333 65.667 -27.333 83 -30c0 0 26 -6 26 -6c17.333 42.667 28.333 89.333 33 140c4.667 50.667 4.333 77.333 -1 80c0 0 0 0 0 0m-384 514c110.667 0 194.333 -13.333 251 -40c56.667 -26.667 85 -81.333 85 -164c0 -48 -18 -88 -54 -120c-18.667 -17.333 -40.333 -28 -65 -32c-24.667 -4 -62.333 -4 -113 0c-50.667 4 -85.333 6 -104 6c0 0 -2 0 -2 0c0 0 -2 0 -2 0c-21.333 0 -49 -1.333 -83 -4c-34 -2.667 -60.667 -4.333 -80 -5c-19.333 -0.667 -40.333 1.667 -63 7c-22.667 5.333 -41.333 14.667 -56 28c-34.667 30.667 -52 70.667 -52 120c0 82.667 28 137.333 84 164c56 26.667 139.333 40 250 40c0 0 4 0 4 0c0 0 0 0 0 0m-160 -280c17.333 0 32.333 8.667 45 26c12.667 17.333 19 38.667 19 64c0 25.333 -6.333 46.667 -19 64c-12.667 17.333 -27.667 26 -45 26c-18.667 0 -34.333 -8.667 -47 -26c-12.667 -17.333 -19 -38.667 -19 -64c0 -25.333 6.333 -46.667 19 -64c12.667 -17.333 28.333 -26 47 -26c0 0 0 0 0 0" />
+      </symbol>
+      <symbol id="twitter" viewBox="0 0 920 1000">
+        <path d="M920 214c-24 36 -55.333 68.667 -94 98c0 0 0 24 0 24c0 86.667 -20 170 -60 250c-40 80 -102 147.667 -186 203c-84 55.333 -180.667 83 -290 83c-106.667 0 -203.333 -28 -290 -84c9.333 1.333 24.667 2 46 2c88 0 166 -26.667 234 -80c-41.333 -1.333 -78 -14 -110 -38c-32 -24 -54 -55.333 -66 -94c6.667 2.667 18 4 34 4c17.333 0 34 -2 50 -6c-44 -9.333 -80 -31.333 -108 -66c-28 -34.667 -42 -74.667 -42 -120c0 0 0 -2 0 -2c24 13.333 52 21.333 84 24c-56 -38.667 -84 -91.333 -84 -158c0 -32 8.667 -63.333 26 -94c102.667 125.333 232.667 190.667 390 196c-4 -12 -6 -26 -6 -42c0 -52 18.333 -96.333 55 -133c36.667 -36.667 81.667 -55 135 -55c54.667 0 100 19.333 136 58c40 -8 80 -22.667 120 -44c-13.333 44 -40.667 78.667 -82 104c37.333 -5.333 73.333 -15.333 108 -30c0 0 0 0 0 0" />
+      </symbol>
+    </svg>
+
+    <header role="banner">
+      <h1>Flexbox Grid System</h1>
+
+      <p>A simple, flexible and customizable mobile-first grid system based on CSS3 flexbox and custom html attributes with fractional width values.</p>
+
+      <div class="actions">
+        <a href="https://github.com/jeremyfrank/flexbox-grid-system" class="button">
+          <svg class="icon"><use xlink:href="#github" /></svg>
+          View Project Source
+        </a>
+
+        <a href="http://twitter.com/intent/tweet?text=A%20simple%2C%20flexbox%20based%20grid%20system%20using%20custom%20html%20attributes%20with%20fractional%20width%20values.&amp;url=http://jeremyfrank.github.io/flexbox-grid-system/&amp;via=jeremyfrank" class="button">
+          <svg class="icon"><use xlink:href="#twitter" /></svg>
+          Share on Twitter
+        </a>
+      </div>
+    </header>
+
+    <main role="main">
+      <section>
+        <h2>Custom Attributes</h2>
+        <p>Instead of using classes, custom attributes and values are used for assigning layout and properties to a grid. Space-separated attribute selectors in CSS are used to set styling information. This approach is inspired by and similar to <a href="http://amcss.github.io/">AMCSS</a>.</p>
+      </section>
+
+      <section>
+        <h2>Fractional Grid Items</h2>
+        <p>Fraction based syntax is used, as opposed to column based. All you need to know is basic math.</p>
+
+        <div grid>
+          <div grid-item="1/2" class="demo">
+            <p>1/2</p>
+          </div>
+          <div grid-item="1/2" class="demo">
+            <p>1/2</p>
+          </div>
+        </div>
+
+        <div grid>
+          <div grid-item="1/3" class="demo">
+            <p>1/3</p>
+          </div>
+          <div grid-item="1/3" class="demo">
+            <p>1/3</p>
+          </div>
+          <div grid-item="1/3" class="demo">
+            <p>1/3</p>
+          </div>
+        </div>
+
+        <div grid>
+          <div grid-item="1/3" class="demo">
+            <p>1/3</p>
+          </div>
+          <div grid-item="2/3" class="demo">
+            <p>2/3</p>
+          </div>
+        </div>
+
+        <div grid>
+          <div grid-item="1/4" class="demo">
+            <p>1/4</p>
+          </div>
+          <div grid-item="1/4" class="demo">
+            <p>1/4</p>
+          </div>
+          <div grid-item="1/4" class="demo">
+            <p>1/4</p>
+          </div>
+          <div grid-item="1/4" class="demo">
+            <p>1/4</p>
+          </div>
+        </div>
+
+        <div grid>
+          <div grid-item="1/4" class="demo">
+            <p>1/4</p>
+          </div>
+          <div grid-item="3/4" class="demo">
+            <p>3/4</p>
+          </div>
+        </div>
+
+        <div grid>
+          <div grid-item="1/4" class="demo">
+            <p>1/4</p>
+          </div>
+          <div grid-item="1/2" class="demo">
+            <p>1/2</p>
+          </div>
+          <div grid-item="1/4" class="demo">
+            <p>1/4</p>
+          </div>
+        </div>
+        <pre class="prettyprint theme-snappy-light">&lt;div grid&gt;
+  &lt;div grid-item=&quot;1/3&quot;&gt;
+    ...
+  &lt;/div&gt;
+  &lt;div grid-item=&quot;2/3&quot;&gt;
+    ...
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+      </section>
+
+      <section>
+        <h2>Target Modifiers</h2>
+        <p>Handle different layouts at different breakpoints with ease using target modifiers (lap & desk).</p>
+        <p><code class="prettyprint theme-snappy-light">grid-item="fraction[:target]"</code></p>
+
+        <h3>1/2 (hand), 1/3 & 2/3 Alternating (desk)</h3>
+        <div grid>
+          <div grid-item="1/2 1/3:desk" class="demo">
+            <p>1/2 1/3:desk</p>
+          </div>
+          <div grid-item="1/2 2/3:desk" class="demo">
+            <p>1/2 2/3:desk</p>
+          </div>
+          <div grid-item="1/2 2/3:desk" class="demo">
+            <p>1/2 2/3:desk</p>
+          </div>
+          <div grid-item="1/2 1/3:desk" class="demo">
+            <p>1/2 1/3:desk</p>
+          </div>
+        </div>
+
+        <h3>Full Width (hand), 1/2 (lap), 1/4 (desk)</h3>
+        <div grid>
+          <div grid-item="1/2:lap 1/4:desk" class="demo">
+            <p>1/2:lap 1/4:desk</p>
+          </div>
+          <div grid-item="1/2:lap 1/4:desk" class="demo">
+            <p>1/2:lap 1/4:desk</p>
+          </div>
+          <div grid-item="1/2:lap 1/4:desk" class="demo">
+            <p>1/2:lap 1/4:desk</p>
+          </div>
+          <div grid-item="1/2:lap 1/4:desk" class="demo">
+            <p>1/2:lap 1/4:desk</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Auto Columns</h2>
+        <p><code class="prettyprint theme-snappy-light">grid-item="auto[:target]"</code></p>
+        <div grid>
+          <div grid-item="auto:lap" class="demo">
+            <p>auto:lap</p>
+          </div>
+          <div grid-item="auto:lap" class="demo">
+            <p>auto:lap</p>
+          </div>
+          <div grid-item="auto:lap" class="demo">
+            <p>auto:lap</p>
+          </div>
+        </div>
+
+        <pre class="prettyprint theme-snappy-light">&lt;div grid&gt;
+    &lt;div grid-item=&quot;auto:lap&quot;&gt;
+      ...
+    &lt;/div&gt;
+    &lt;div grid-item=&quot;auto:lap&quot;&gt;
+      ...
+    &lt;/div&gt;
+  &lt;/div&gt;</pre>
+      </section>
+
+      <section>
+        <h2>Horizontal Alignment</h2>
+        <p><code class="prettyprint theme-snappy-light">grid="justify-start"</code></p>
+        <div grid="justify-start">
+          <div grid-item="1/4" class="demo"></div>
+          <div grid-item="1/4" class="demo"></div>
+        </div>
+        <p><code class="prettyprint theme-snappy-light">grid="justify-center"</code></p>
+        <div grid="justify-center">
+          <div grid-item="1/4" class="demo"></div>
+          <div grid-item="1/4" class="demo"></div>
+        </div>
+        <p><code class="prettyprint theme-snappy-light">grid="justify-end"</code></p>
+        <div grid="justify-end">
+          <div grid-item="1/4" class="demo"></div>
+          <div grid-item="1/4" class="demo"></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Vertical Alignment</h2>
+        <p><code class="prettyprint theme-snappy-light">grid="align-top"</code></p>
+        <div grid="align-top">
+          <div grid-item="1/2" class="demo">
+            <p>
+              These grid items are vertically aligned to the top.
+              These grid items are vertically aligned to the top.
+              These grid items are vertically aligned to the top.
+            </p>
+          </div>
+          <div grid-item="1/2" class="demo">
+            <p>content</p>
+          </div>
+        </div>
+        <p><code class="prettyprint theme-snappy-light">grid="align-middle"</code></p>
+        <div grid="align-middle">
+          <div grid-item="1/2" class="demo">
+            <p>
+              These grid items are vertically aligned to the middle.
+              These grid items are vertically aligned to the middle.
+              These grid items are vertically aligned to the middle.
+            </p>
+          </div>
+          <div grid-item="1/2" class="demo">
+            <p>content</p>
+          </div>
+        </div>
+        <p><code class="prettyprint theme-snappy-light">grid="align-bottom"</code></p>
+        <div grid="align-bottom">
+          <div grid-item="1/2" class="demo">
+            <p>
+              These grid items are vertically aligned to the bottom.
+              These grid items are vertically aligned to the bottom.
+              These grid items are vertically aligned to the bottom.
+            </p>
+          </div>
+          <div grid-item="1/2" class="demo">
+            <p>content</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Distribution</h2>
+        <p><code class="prettyprint theme-snappy-light">grid="distribute-space-around"</code></p>
+        <div grid="distribute-space-around">
+          <div grid-item="1/4" class="demo"></div>
+          <div grid-item="1/4" class="demo"></div>
+        </div>
+        <p><code class="prettyprint theme-snappy-light">grid="distribute-space-between"</code></p>
+        <div grid="distribute-space-between">
+          <div grid-item="1/4" class="demo"></div>
+          <div grid-item="1/4" class="demo"></div>
+          <div grid-item="1/4" class="demo"></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Reordering</h2>
+        <p><code class="prettyprint theme-snappy-light">grid-item="last"</code></p>
+        <div grid>
+          <div grid-item="1/4 last" class="demo">
+            <p>1</p>
+          </div>
+          <div grid-item="1/4" class="demo">
+            <p>2</p>
+          </div>
+          <div grid-item="1/4" class="demo">
+            <p>3</p>
+          </div>
+          <div grid-item="1/4" class="demo">
+            <p>4</p>
+          </div>
+        </div>
+        <p><code class="prettyprint theme-snappy-light">grid-item="first"</code></p>
+        <div grid>
+          <div grid-item="1/4" class="demo">
+            <p>1</p>
+          </div>
+          <div grid-item="1/4" class="demo">
+            <p>2</p>
+          </div>
+          <div grid-item="1/4" class="demo">
+            <p>3</p>
+          </div>
+          <div grid-item="1/4 first" class="demo">
+            <p>4</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Reversing</h2>
+        <p><code class="prettyprint theme-snappy-light">grid="reverse"</code></p>
+        <div grid="reverse">
+          <div grid-item="1/4" class="demo">
+            <p>1</p>
+          </div>
+          <div grid-item="1/4" class="demo">
+            <p>2</p>
+          </div>
+          <div grid-item="1/4" class="demo">
+            <p>3</p>
+          </div>
+          <div grid-item="1/4" class="demo">
+            <p>4</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="//platform.twitter.com/widgets.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/prettify.js"></script>
+    <script>
+      // window.onload = prettyPrint();
+      window.addEventListener('load', prettyPrint);
+    </script>
+  </body>
+</html>
